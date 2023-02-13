@@ -1,0 +1,17 @@
+body {
+  background-color:indigo ;
+  color: yellow;
+  font-weight: bold;
+  font-family:"Yu Gothic"
+}
+
+.Kansei {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: x-large;
+  color: black;
+  text-shadow:0.5px 0.5px 0px yellow;
+}
+
+.tokutyo {
+  color: white;
+}
