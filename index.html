@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>React App</title>
+</head>
+
+<body>
+  <h1 style="text-align:center">ソウドリ キャッチコピーメイカー</h1>
+  <br>
+  <p style="text-align:center">名前：<input type="text" id="nameText" required size="20"> <input type="button" value="決定" id="checkButton"></p>
+  <br>
+  <p style="text-align:center" class="tokutyo">【芸人の特徴を選択してください】</p>
+  <h1>人数</h1>
+  <form name="ninzu" onclick="checkfunction1()">
+    <input type="checkbox" class="checks" id="ピン芸人"> ピン芸人　
+    <input type="checkbox" class="checks" id="トリオ"> トリオ　
+    <script>
+      function checkfunction1() {
+        var pin = document.getElementById("ピン芸人");
+        var torio = document.getElementById("トリオ");
+        var ccpin = document.getElementById("ccピン芸人");
+        var cctorio1 = document.getElementById("ccトリオ1");
+        var cctorio2 = document.getElementById("ccトリオ2");
+        var cctorio3 = document.getElementById("ccトリオ3");
+        if (pin.checked == true) {
+          ccpin.style.display = "block";
+        }
+        else {
+          ccpin.style.display = "none";
+        }
+        if (torio.checked == true) {
+          cctorio1.style.display = "block";
+          cctorio2.style.display = "block";
+          cctorio3.style.display = "block";
+        }
+        else {
+          cctorio1.style.display = "none";
+          cctorio2.style.display = "none";
+          cctorio3.style.display = "none";
+        }
+      }
+    </script>
+  </form>
+  <br>
+  <br>
+  <h1>芸風</h1>
+  <form name="geifu" onclick="checkfunction2()">
+    <input type="checkbox" class="checks" id="漫才"> 漫才　
+    <input type="checkbox" class="checks" id="正統派漫才"> 正統派漫才　
+    <input type="checkbox" class="checks" id="コント"> コント　
+    <input type="checkbox" class="checks" id="フリップ芸"> フリップ芸　
+    <input type="checkbox" class="checks" id="ギャグ"> ギャグ　
+    <input type="checkbox" class="checks" id="ゆるい"> ゆるい　
+    <input type="checkbox" class="checks" id="落ち着いている"> 落ち着いている　
+    <input type="checkbox" class="checks" id="静か"> 静か　
+    <input type="checkbox" class="checks" id="テンションが高い"> テンションが高い　
+    <input type="checkbox" class="checks" id="熱い"> 熱い　
+    <input type="checkbox" class="checks" id="叫ぶ"> 叫ぶ　
+    <input type="checkbox" class="checks" id="勢いがある"> 勢いがある　
+    <input type="checkbox" class="checks" id="力強い"> 力強い　
+    <input type="checkbox" class="checks" id="ツッコミの勢いが強い"> ツッコミの勢いが強い　
+    <input type="checkbox" class="checks" id="筋肉"> 筋肉　
+    <input type="checkbox" class="checks" id="気合いで張り切る"> 気合いで張り切る　
+    <input type="checkbox" class="checks" id="異常性がある"> 異常性がある　
+    <input type="checkbox" class="checks" id="ビートを使う"> ビートを使う　
+    <input type="checkbox" class="checks" id="変態的"> 変態的　
+    <input type="checkbox" class="checks" id="太った人が動き回る"> 太った人が動き回る　
+    <input type="checkbox" class="checks" id="不思議でキモい"> 不思議でキモい　
+    <input type="checkbox" class="checks" id="誰かになりきる"> 誰かになりきる　
+    <script>
+      function checkfunction2() {
+        var man = document.getElementById("漫才");
+        var seiman = document.getElementById("正統派漫才");
+        var konto = document.getElementById("コント");
+        var frip = document.getElementById("フリップ芸");
+        var gag = document.getElementById("ギャグ");
+        var yurui = document.getElementById("ゆるい");
+        var oti = document.getElementById("落ち着いている");
+        var sizu = document.getElementById("静か");
+        var taka = document.getElementById("テンションが高い");
+        var atu = document.getElementById("熱い");
+        var sake = document.getElementById("叫ぶ");
+        var ikioi = document.getElementById("勢いがある");
+        var tikara = document.getElementById("力強い");
+        var tukko = document.getElementById("ツッコミの勢いが強い");
+        var kin = document.getElementById("筋肉");
+        var kiai = document.getElementById("気合いで張り切る");
+        var ijou = document.getElementById("異常性がある");
+        var beat = document.getElementById("ビートを使う");
+        var hentai = document.getElementById("変態的");
+        var debu = document.getElementById("太った人が動き回る");
+        var kimo = document.getElementById("不思議でキモい");
+        var hyoi = document.getElementById("誰かになりきる");
+        var ccman = document.getElementById("cc漫才");
+        var ccseiman1 = document.getElementById("cc正統派漫才1");
+        var ccseiman2 = document.getElementById("cc正統派漫才2");
+        var ccseiman3 = document.getElementById("cc正統派漫才3");
+        var cckonto1 = document.getElementById("ccコント1");
+        var cckonto2 = document.getElementById("ccコント2");
+        var cckonto3 = document.getElementById("ccコント3");
+        var ccfrip = document.getElementById("ccフリップ芸");
+        var ccgag1 = document.getElementById("ccギャグ1");
+        var ccgag2 = document.getElementById("ccギャグ2");
+        var ccgag3 = document.getElementById("ccギャグ3");
+        var ccyurui1 = document.getElementById("ccゆるい1");
+        var ccyurui2 = document.getElementById("ccゆるい2");
+        var ccoti = document.getElementById("cc落ち着いている");
+        var ccsizu = document.getElementById("cc静か");
+        var cctaka = document.getElementById("ccテンションが高い");
+        var ccatu1 = document.getElementById("cc熱い1");
+        var ccatu2 = document.getElementById("cc熱い2");
+        var ccsake1 = document.getElementById("cc叫ぶ1");
+        var ccsake2 = document.getElementById("cc叫ぶ2");
+        var ccsake3 = document.getElementById("cc叫ぶ3");
+        var ccikioi = document.getElementById("cc勢いがある");
+        var cctikara1 = document.getElementById("cc力強い1");
+        var cctikara2 = document.getElementById("cc力強い2");
+        var cctukko = document.getElementById("ccツッコミの勢いが強い");
+        var cckin = document.getElementById("cc筋肉");
+        var cckiai = document.getElementById("cc気合いで張り切る");
+        var ccijou1 = document.getElementById("cc異常性がある1");
+        var ccijou2 = document.getElementById("cc異常性がある2");
+        var ccbeat1 = document.getElementById("ccビートを使う1");
+        var cchentai1 = document.getElementById("cc変態的1");
+        var cchentai2 = document.getElementById("cc変態的2");
+        var ccdebu = document.getElementById("cc太った人が動き回る");
+        var cckimo = document.getElementById("cc不思議でキモい");
+        var cchyoi = document.getElementById("cc誰かになりきる");
+        if (man.checked == true) {
+          ccman.style.display = "block";
+        }
+        else {
+          ccman.style.display = "none";
+        }
+        if (seiman.checked == true) {
+          ccseiman1.style.display = "block";
+          ccseiman2.style.display = "block";
+          ccseiman3.style.display = "block";
+        }
+        else {
+          ccseiman1.style.display = "none";
+          ccseiman2.style.display = "none";
+          ccseiman3.style.display = "none";
+        }
+        if (konto.checked == true) {
+          cckonto1.style.display = "block";
+          cckonto2.style.display = "block";
+          cckonto3.style.display = "block";
+        }
+        else {
+          cckonto1.style.display = "none";
+          cckonto2.style.display = "none";
+          cckonto3.style.display = "none";
+        }
+        if (frip.checked == true) {
+          ccfrip.style.display = "block";
+        }
+        else {
+          ccfrip.style.display = "none";
+        }
+        if (gag.checked == true) {
+          ccgag1.style.display = "block";
+          ccgag2.style.display = "block";
+          ccgag3.style.display = "block";
+        }
+        else {
+          ccgag1.style.display = "none";
+          ccgag2.style.display = "none";
+          ccgag3.style.display = "none";
+        }
+        if (yurui.checked == true) {
+          ccyurui1.style.display = "block";
+          ccyurui2.style.display = "block";
+        }
+        else {
+          ccyurui1.style.display = "none";
+          ccyurui2.style.display = "none";
+        }
+        if (oti.checked == true) {
+          ccoti.style.display = "block";
+        }
+        else {
+          ccoti.style.display = "none";
+        }
+        if (sizu.checked == true) {
+          ccsizu.style.display = "block";
+        }
+        else {
+          ccsizu.style.display = "none";
+        }
+        if (taka.checked == true) {
+          cctaka.style.display = "block";
+        }
+        else {
+          cctaka.style.display = "none";
+        }
+        if (atu.checked == true) {
+          ccatu1.style.display = "block";
+          ccatu2.style.display = "block";
+        }
+        else {
+          ccatu1.style.display = "none";
+          ccatu2.style.display = "none";
+        }
+        if (sake.checked == true) {
+          ccsake1.style.display = "block";
+          ccsake2.style.display = "block";
+          ccsake3.style.display = "block";
+        }
+        else {
+          ccsake1.style.display = "none";
+          ccsake2.style.display = "none";
+          ccsake3.style.display = "none";
+        }
+        if (ikioi.checked == true) {
+          ccikioi.style.display = "block";
+        }
+        else {
+          ccikioi.style.display = "none";
+        }
+        if (tikara.checked == true) {
+          cctikara1.style.display = "block";
+          cctikara2.style.display = "block";
+        }
+        else {
+          cctikara1.style.display = "none";
+          cctikara2.style.display = "none";
+        }
+        if (tukko.checked == true) {
+          cctukko.style.display = "block";
+        }
+        else {
+          cctukko.style.display = "none";
+        }
+        if (kin.checked == true) {
+          cckin.style.display = "block";
+        }
+        else {
+          cckin.style.display = "none";
+        }
+        if (kiai.checked == true) {
+          cckiai.style.display = "block";
+        }
+        else {
+          cckiai.style.display = "none";
+        }
+        if (ijou.checked == true) {
+          ccijou1.style.display = "block";
+          ccijou2.style.display = "block";
+        }
+        else {
+          ccijou1.style.display = "none";
+          ccijou2.style.display = "none";
+        }
+        if (beat.checked == true) {
+          ccbeat1.style.display = "block";
+        }
+        else {
+          ccbeat1.style.display = "none";
+        }
+        if (hentai.checked == true) {
+          cchentai1.style.display = "block";
+          cchentai2.style.display = "block";
+        }
+        else {
+          cchentai1.style.display = "none";
+          cchentai2.style.display = "none";
+        }
+        if (debu.checked == true) {
+          ccdebu.style.display = "block";
+        }
+        else {
+          ccdebu.style.display = "none";
+        }
+        if (kimo.checked == true) {
+          cckimo.style.display = "block";
+        }
+        else {
+          cckimo.style.display = "none";
+        }
+        if (hyoi.checked == true) {
+          cchyoi.style.display = "block";
+        }
+        else {
+          cchyoi.style.display = "none";
+        }
+      }
+    </script>
+  </form>
+  <br>
+  <br>
+  <h1>背景</h1>
+  <form name="haikei" onclick="checkfunction3()">
+    <input type="checkbox" class="checks" id="大阪"> 大阪　
+    <input type="checkbox" class="checks" id="年長者のおバカ"> 年長者のおバカ　
+    <input type="checkbox" class="checks" id="バカ-1クライマックス出場者"> バカ-1クライマックス出場者　
+    <input type="checkbox" class="checks" id="結成3年以内"> 結成3年以内　
+    <input type="checkbox" class="checks" id="結成5年以内"> 結成5年以内　
+    <input type="checkbox" class="checks" id="結成8年以内"> 結成8年以内　
+    <script>
+      function checkfunction3() {
+        var oosaka = document.getElementById("大阪");
+        var baka = document.getElementById("年長者のおバカ");
+        var bakaone = document.getElementById("バカ-1クライマックス出場者");
+        var san = document.getElementById("結成3年以内");
+        var go = document.getElementById("結成5年以内");
+        var hati = document.getElementById("結成8年以内");
+        var ccoosaka = document.getElementById("cc大阪");
+        var ccbaka = document.getElementById("cc年長者のおバカ");
+        var ccbakaone1 = document.getElementById("ccバカ-1クライマックス出場者1");
+        var ccbakaone2 = document.getElementById("ccバカ-1クライマックス出場者2");
+        var ccsan1 = document.getElementById("cc結成3年以内1");
+        var ccsan2 = document.getElementById("cc結成3年以内2");
+        var ccgo = document.getElementById("cc結成5年以内");
+        var cchati = document.getElementById("cc結成8年以内");
+        if (oosaka.checked == true) {
+          ccoosaka.style.display = "block";
+        }
+        else {
+          ccoosaka.style.display = "none";
+        }
+        if (baka.checked == true) {
+          ccbaka.style.display = "block";
+        }
+        else {
+          ccbaka.style.display = "none";
+        }
+        if (bakaone.checked == true) {
+          ccbakaone1.style.display = "block";
+          ccbakaone2.style.display = "block";
+        }
+        else {
+          ccbakaone1.style.display = "none";
+          ccbakaone2.style.display = "none";
+        }
+        if (san.checked == true) {
+          ccsan1.style.display = "block";
+          ccsan2.style.display = "block";
+        }
+        else {
+          ccsan1.style.display = "none";
+          ccsan2.style.display = "none";
+        }
+        if (go.checked == true) {
+          ccgo.style.display = "block";
+        }
+        else {
+          ccgo.style.display = "none";
+        }
+        if (hati.checked == true) {
+          cchati.style.display = "block";
+        }
+        else {
+          cchati.style.display = "none";
+        }
+      }
+    </script>
+  </form>
+  <br>
+  <br>
+  <h1>見た目</h1>
+  <form name="mitame" onclick="checkfunction4()">
+    <input type="checkbox" class="checks" id="黒い"> 黒い　
+    <input type="checkbox" class="checks" id="（トリオの3人とも）特徴が違う"> （トリオの3人とも）特徴が違う
+    <script>
+      function checkfunction4() {
+        var kuro = document.getElementById("黒い");
+        var bara = document.getElementById("（トリオの3人とも）特徴が違う");
+        var cckuro = document.getElementById("cc黒い");
+        var ccbara1 = document.getElementById("cc（トリオの3人とも）特徴が違う1");
+        var ccbara2 = document.getElementById("cc（トリオの3人とも）特徴が違う2");
+        if (kuro.checked == true) {
+          cckuro.style.display = "block";
+        }
+        else {
+          cckuro.style.display = "none";
+        }
+        if (bara.checked == true) {
+          ccbara1.style.display = "block";
+          ccbara2.style.display = "block";
+        }
+        else {
+          ccbara1.style.display = "none";
+          ccbara2.style.display = "none";
+        }
+      }
+    </script>
+  </form>
+  <br>
+  <br>
+  <h1>名前</h1>
+  <form name="namae" onclick="checkfunction5()">
+    <input type="checkbox" class="checks" id="輝きを連想させる"> 輝きを連想させる　
+    <input type="checkbox" class="checks" id="フランスに関係する"> フランスに関係する　
+    <script>
+      function checkfunction5() {
+        var kira = document.getElementById("輝きを連想させる");
+        var pari = document.getElementById("フランスに関係する");
+        var cckira1 = document.getElementById("cc輝きを連想させる1");
+        var cckira2 = document.getElementById("cc輝きを連想させる2");
+        var ccpari1 = document.getElementById("ccフランスに関係する1");
+        var ccpari2 = document.getElementById("ccフランスに関係する2");
+        if (kira.checked == true) {
+          cckira1.style.display = "block";
+          cckira2.style.display = "block";
+        }
+        else {
+          cckira1.style.display = "none";
+          cckira2.style.display = "none";
+        }
+        if (pari.checked == true) {
+          ccpari1.style.display = "block";
+          ccpari2.style.display = "block";
+        }
+        else {
+          ccpari1.style.display = "none";
+          ccpari2.style.display = "none";
+        }
+      }
+    </script>
+  </form>
+  <br>
+  <br>
+  <p style="text-align:center" class="tokutyo">【キャッチコピーのパーツを選択してください】</p>
+  <h1>Aパート</h1>
+  <form name="forma">
+    <p id="ccピン芸人" style="display:none"><input type="radio" id="a1" onchange="onRadioButtonChange();" name="a"><label> 孤高の</label></p>
+    <p id="cc正統派漫才1" style="display:none"><input type="radio" id="a2" onchange="onRadioButtonChange();" name="a"><label> しゃべくり</label></p>
+    <p id="ccコント1" style="display:none"><input type="radio" id="a3" onchange="onRadioButtonChange();" name="a"><label> コント</label></p>
+    <p id="ccゆるい1" style="display:none"><input type="radio" id="a4" onchange="onRadioButtonChange();" name="a"><label> 脱力</label></p>
+    <p id="ccゆるい2" style="display:none"><input type="radio" id="a5" onchange="onRadioButtonChange();" name="a"><label> 脱力の</label></p>
+    <p id="cc落ち着いている" style="display:none"><input type="radio" id="a6" onchange="onRadioButtonChange();" name="a"><label> 冷徹の</label></p>
+    <p id="cc静か" style="display:none"><input type="radio" id="a7" onchange="onRadioButtonChange();" name="a"><label> 静かなる</label></p>
+    <p id="cc熱い1" style="display:none"><input type="radio" id="a8" onchange="onRadioButtonChange();" name="a"><label> 情熱</label></p>
+    <p id="cc叫ぶ1" style="display:none"><input type="radio" id="a9" onchange="onRadioButtonChange();" name="a"><label> 絶叫</label></p>
+    <p id="cc叫ぶ3" style="display:none"><input type="radio" id="a10" onchange="onRadioButtonChange();" name="a"><label> 絶叫の</label></p>
+    <p id="cc力強い1" style="display:none"><input type="radio" id="a11" onchange="onRadioButtonChange();" name="a"><label> 豪腕</label></p>
+    <p id="ccツッコミの勢いが強い" style="display:none"><input type="radio" id="a12" onchange="onRadioButtonChange();" name="a"><label> 轟の</label></p>
+    <p id="cc変態的1" style="display:none"><input type="radio" id="a13" onchange="onRadioButtonChange();" name="a"><label> 妄想</label></p>
+    <p id="cc太った人が動き回る" style="display:none"><input type="radio" id="a14" onchange="onRadioButtonChange();" name="a"><label> 肉弾</label></p>
+    <p id="cc誰かになりきる" style="display:none"><input type="radio" id="a15" onchange="onRadioButtonChange();" name="a"><label> 憑依の</label></p>
+    <p id="cc大阪" style="display:none"><input type="radio" id="a16" onchange="onRadioButtonChange();" name="a"><label> 浪速の</label></p>
+    <p id="cc結成5年以内" style="display:none"><input type="radio" id="a17" onchange="onRadioButtonChange();" name="a"><label> 新星</label></p>
+    <p id="cc結成3年以内1" style="display:none"><input type="radio" id="a18" onchange="onRadioButtonChange();" name="a"><label> 超新星</label></p>
+    <p id="cc黒い" style="display:none"><input type="radio" id="a19" onchange="onRadioButtonChange();" name="a"><label> 漆黒の</label></p>
+    <p id="cc（トリオの3人とも）特徴が違う1" style="display:none"><input type="radio" id="a20" onchange="onRadioButtonChange();" name="a"><label> 不揃いの</label></p>
+    <p id="cc輝きを連想させる1" style="display:none"><input type="radio" id="a21" onchange="onRadioButtonChange();" name="a"><label> 閃光の</label></p>
+    <p><input type="radio" name="a" id="a22" onchange="onRadioButtonChange();"><label> 笑いの</label></p>
+    <p><input type="radio" name="a" id="a23" onchange="onRadioButtonChange();"><label> 笑撃の</label></p>
+    <p><input type="radio" name="a" id="a24" onchange="onRadioButtonChange();"><label> 暴走</label></p>
+    <p><input type="radio" name="a" id="a25" onchange="onRadioButtonChange();"><label> ザ・</label></p>
+    <p><input type="radio" name="a" id="a26" onchange="onRadioButtonChange();"><label> ジ・</label></p>
+    <p><input type="radio" name="a" id="a27" onchange="onRadioButtonChange();"><label><input type="text" id="freea" required size="10">（自由記述欄）</label></p>
+    <br>
+    <br>
+  </form>
+  <h1>Bパート</h1>
+  <form name="formb">
+    <p id="ccトリオ3" style="display:none"><input type="radio" id="b1" onchange="onRadioButtonChange();" name="b"><label> トリプル</label></p>
+    <p id="cc漫才" style="display:none"><input type="radio" id="b2" onchange="onRadioButtonChange();" name="b"><label> 漫才</label></p>
+    <p id="cc正統派漫才2" style="display:none"><input type="radio" id="b3" onchange="onRadioButtonChange();" name="b"><label> しゃべくり</label></p>
+    <p id="cc正統派漫才3" style="display:none"><input type="radio" id="b4" onchange="onRadioButtonChange();" onchange="onRadioButtonChange();" name="b"><label> べしゃり</label></p>
+    <p id="ccコント2" style="display:none"><input type="radio" id="b5" onchange="onRadioButtonChange();" name="b"><label> コント</label></p>
+    <p id="ccフリップ芸" style="display:none"><input type="radio" id="b6" onchange="onRadioButtonChange();" name="b"><label> フリップ</label></p>
+    <p id="ccギャグ1" style="display:none"><input type="radio" id="b7" onchange="onRadioButtonChange();" name="b"><label> ギャグ</label></p>
+    <p id="ccギャグ3" style="display:none"><input type="radio" id="b8" onchange="onRadioButtonChange();" name="b"><label> ギャガー</label></p>
+    <p id="cc熱い2" style="display:none"><input type="radio" id="b9" onchange="onRadioButtonChange();" name="b"><label> 情熱</label></p>
+    <p id="cc勢いがある" style="display:none"><input type="radio" id="b10" onchange="onRadioButtonChange();" name="b"><label> パワフル</label></p>
+    <p id="cc力強い2" style="display:none"><input type="radio" id="b11" onchange="onRadioButtonChange();" name="b"><label> 豪腕</label></p>
+    <p id="cc筋肉" style="display:none"><input type="radio" id="b12" onchange="onRadioButtonChange();" name="b"><label> マッスル</label></p>
+    <p id="cc気合いで張り切る" style="display:none"><input type="radio" id="b13" onchange="onRadioButtonChange();" name="b"><label> ハッスル</label></p>
+    <p id="cc異常性がある1" style="display:none"><input type="radio" id="b14" onchange="onRadioButtonChange();" name="b"><label> クレイジー</label></p>
+    <p id="ccビートを使う1" style="display:none"><input type="radio" id="b15" onchange="onRadioButtonChange();" name="b"><label> ビート</label></p>
+    <p id="cc変態的2" style="display:none"><input type="radio" id="b16" onchange="onRadioButtonChange();" name="b"><label> 妄想</label></p>
+    <p id="cc不思議でキモい" style="display:none"><input type="radio" id="b17" onchange="onRadioButtonChange();" name="b"><label> 奇天烈</label></p>
+    <p id="ccバカ-1クライマックス出場者1" style="display:none"><input type="radio" id="b23" onchange="onRadioButtonChange();" name="b"><label> バカ</label></p>
+    <p id="cc（トリオの3人とも）特徴が違う2" style="display:none"><input type="radio" id="b18" onchange="onRadioButtonChange();" name="b"><label> 不揃い</label></p>
+    <p><input type="radio" id="b19" onchange="onRadioButtonChange();" name="b"><label> お笑い</label></p>
+    <p><input type="radio" id="b20" onchange="onRadioButtonChange();" name="b"><label> 暴走</label></p>
+    <p><input type="radio" name="b" id="b22" onchange="onRadioButtonChange();"><label><input type="text" id="freeb" required size="10">（自由記述欄）</label></p>
+    <p><input type="radio" id="b21" onchange="onRadioButtonChange();" name="b"><label> （なし）</label></p>
+    <br>
+    <br>
+  </form>
+  <h1>Cパート</h1>
+  <form name="formc">
+    <p id="ccトリオ1" style="display:none"><input type="radio" id="c1" onchange="onRadioButtonChange();" name="c"><label> トライアングル</label></p>
+    <p id="ccトリオ2" style="display:none"><input type="radio" id="c2" onchange="onRadioButtonChange();" name="c"><label> 三銃士</label></p>
+    <p id="ccコント3" style="display:none"><input type="radio" id="c3" onchange="onRadioButtonChange();" name="c"><label> アクター</label></p>
+    <p id="ccギャグ2" style="display:none"><input type="radio" id="c4" onchange="onRadioButtonChange();" name="c"><label> ギャガー</label></p>
+    <p id="ccテンションが高い" style="display:none"><input type="radio" id="c5" onchange="onRadioButtonChange();" name="c"><label> ハイテンション</label></p>
+    <p id="cc叫ぶ2" style="display:none"><input type="radio" id="c6" onchange="onRadioButtonChange();" name="c"><label> スクリーム</label></p>
+    <p id="cc異常性がある2" style="display:none"><input type="radio" id="c7" onchange="onRadioButtonChange();" name="c"><label> クレイジー</label></p>
+    <p id="cc年長者のおバカ" style="display:none"><input type="radio" id="c8" onchange="onRadioButtonChange();" name="c"><label> バカ一代</label></p>
+    <p id="ccバカ-1クライマックス出場者2" style="display:none"><input type="radio" id="c15" onchange="onRadioButtonChange();" name="c"><label> バカ</label></p>
+    <p id="cc結成3年以内2" style="display:none"><input type="radio" id="c9" onchange="onRadioButtonChange();" name="c"><label> 超新星</label></p>
+    <p id="cc結成8年以内" style="display:none"><input type="radio" id="c10" onchange="onRadioButtonChange();" name="c"><label> ルーキー</label></p>
+    <p id="cc輝きを連想させる2" style="display:none"><input type="radio" id="c11" onchange="onRadioButtonChange();" name="c"><label> 閃光</label></p>
+    <p id="ccフランスに関係する1" style="display:none"><input type="radio" id="c12" onchange="onRadioButtonChange();" name="c"><label> パリジャン</label></p>
+    <p id="ccフランスに関係する2" style="display:none"><input type="radio" id="c13" onchange="onRadioButtonChange();" name="c"><label> ジェンヌ</label></p>
+    <p><input type="radio" id="デフォc1" onchange="onRadioButtonChange();" name="c"><label> 劇場</label></p>
+    <p><input type="radio" id="デフォc2" onchange="onRadioButtonChange();" name="c"><label> シュールメイカー</label></p>
+    <p><input type="radio" name="c" id="c14" onchange="onRadioButtonChange();"><label><input type="text" id="freec" required size="10">（自由記述欄）</label></p>
+    <br>
+    <br>
+  </form>
+  <script>
+    function butotnClick() {
+      msg.innerText = nameText.value + 'のキャッチコピーは';
+    }
+    let checkButton = document.getElementById('checkButton');
+    checkButton.addEventListener('click', butotnClick);
+  </script>
+
+  <script>
+    function onRadioButtonChange() {
+
+      cca1 = document.forma.a1.checked;
+      cca2 = document.forma.a2.checked;
+      cca3 = document.forma.a3.checked;
+      cca4 = document.forma.a4.checked;
+      cca5 = document.forma.a5.checked;
+      cca6 = document.forma.a6.checked;
+      cca7 = document.forma.a7.checked;
+      cca8 = document.forma.a8.checked;
+      cca9 = document.forma.a9.checked;
+      cca10 = document.forma.a10.checked;
+      cca11 = document.forma.a11.checked;
+      cca12 = document.forma.a12.checked;
+      cca13 = document.forma.a13.checked;
+      cca14 = document.forma.a14.checked;
+      cca15 = document.forma.a15.checked;
+      cca16 = document.forma.a16.checked;
+      cca17 = document.forma.a17.checked;
+      cca18 = document.forma.a18.checked;
+      cca19 = document.forma.a19.checked;
+      cca20 = document.forma.a20.checked;
+      cca21 = document.forma.a21.checked;
+      cca22 = document.forma.a22.checked;
+      cca23 = document.forma.a23.checked;
+      cca24 = document.forma.a24.checked;
+      cca25 = document.forma.a25.checked;
+      cca26 = document.forma.a26.checked;
+      cca27 = document.forma.a27.checked;
+      const freea = document.getElementById("freea")
+      const valuea = freea.value
+
+      targeta = document.getElementById("outputa");
+
+      if (cca1 == true) {
+        targeta.innerHTML = "孤高の";
+      }
+      else if (cca2 == true) {
+        targeta.innerHTML = "しゃべくり";
+      }
+      else if (cca3 == true) {
+        targeta.innerHTML = "コント";
+      }
+      else if (cca4 == true) {
+        targeta.innerHTML = "脱力";
+      }
+      else if (cca5 == true) {
+        targeta.innerHTML = "脱力の";
+      }
+      else if (cca6 == true) {
+        targeta.innerHTML = "冷徹の";
+      }
+      else if (cca7 == true) {
+        targeta.innerHTML = "静かなる";
+      }
+      else if (cca8 == true) {
+        targeta.innerHTML = "情熱";
+      }
+      else if (cca9 == true) {
+        targeta.innerHTML = "絶叫";
+      }
+      else if (cca10 == true) {
+        targeta.innerHTML = "絶叫の";
+      }
+      else if (cca11 == true) {
+        targeta.innerHTML = "豪腕";
+      }
+      else if (cca12 == true) {
+        targeta.innerHTML = "轟の";
+      }
+      else if (cca13 == true) {
+        targeta.innerHTML = "妄想";
+      }
+      else if (cca14 == true) {
+        targeta.innerHTML = "肉弾";
+      }
+      else if (cca15 == true) {
+        targeta.innerHTML = "憑依の";
+      }
+      else if (cca16 == true) {
+        targeta.innerHTML = "浪速の";
+      }
+      else if (cca17 == true) {
+        targeta.innerHTML = "新星";
+      }
+      else if (cca18 == true) {
+        targeta.innerHTML = "超新星";
+      }
+      else if (cca19 == true) {
+        targeta.innerHTML = "漆黒の";
+      }
+      else if (cca20 == true) {
+        targeta.innerHTML = "不揃いの";
+      }
+      else if (cca21 == true) {
+        targeta.innerHTML = "閃光の";
+      }
+      else if (cca22 == true) {
+        targeta.innerHTML = "笑いの";
+      }
+      else if (cca23 == true) {
+        targeta.innerHTML = "笑撃の";
+      }
+      else if (cca24 == true) {
+        targeta.innerHTML = "暴走";
+      }
+      else if (cca25 == true) {
+        targeta.innerHTML = "ザ・";
+      }
+      else if (cca26 == true) {
+        targeta.innerHTML = "ジ・";
+      }
+      else if (cca27 == true) {
+        targeta.innerHTML = freea.value;
+      }
+
+      ccb1 = document.formb.b1.checked;
+      ccb2 = document.formb.b2.checked;
+      ccb3 = document.formb.b3.checked;
+      ccb4 = document.formb.b4.checked;
+      ccb5 = document.formb.b5.checked;
+      ccb6 = document.formb.b6.checked;
+      ccb7 = document.formb.b7.checked;
+      ccb8 = document.formb.b8.checked;
+      ccb9 = document.formb.b9.checked;
+      ccb10 = document.formb.b10.checked;
+      ccb11 = document.formb.b11.checked;
+      ccb12 = document.formb.b12.checked;
+      ccb13 = document.formb.b13.checked;
+      ccb14 = document.formb.b14.checked;
+      ccb15 = document.formb.b15.checked;
+      ccb16 = document.formb.b16.checked;
+      ccb17 = document.formb.b17.checked;
+      ccb18 = document.formb.b18.checked;
+      ccb19 = document.formb.b19.checked;
+      ccb20 = document.formb.b20.checked;
+      ccb21 = document.formb.b21.checked;
+      ccb22 = document.formb.b22.checked;
+      ccb23 = document.formb.b23.checked;
+      const freeb = document.getElementById("freeb")
+      const valueb = freeb.value
+
+      targetb = document.getElementById("outputb");
+
+      if (ccb1 == true) {
+        targetb.innerHTML = "トリプル";
+      }
+      else if (ccb2 == true) {
+        targetb.innerHTML = "漫才";
+      }
+      else if (ccb3 == true) {
+        targetb.innerHTML = "しゃべくり";
+      }
+      else if (ccb4 == true) {
+        targetb.innerHTML = "べしゃり";
+      }
+      else if (ccb5 == true) {
+        targetb.innerHTML = "コント";
+      }
+      else if (ccb6 == true) {
+        targetb.innerHTML = "フリップ";
+      }
+      else if (ccb7 == true) {
+        targetb.innerHTML = "ギャグ";
+      }
+      else if (ccb8 == true) {
+        targetb.innerHTML = "ギャガ―";
+      }
+      else if (ccb9 == true) {
+        targetb.innerHTML = "情熱";
+      }
+      else if (ccb10 == true) {
+        targetb.innerHTML = "パワフル";
+      }
+      else if (ccb11 == true) {
+        targetb.innerHTML = "豪腕";
+      }
+      else if (ccb12 == true) {
+        targetb.innerHTML = "マッスル";
+      }
+      else if (ccb13 == true) {
+        targetb.innerHTML = "ハッスル";
+      }
+      else if (ccb14 == true) {
+        targetb.innerHTML = "クレイジー";
+      }
+      else if (ccb15 == true) {
+        targetb.innerHTML = "ビート";
+      }
+      else if (ccb16 == true) {
+        targetb.innerHTML = "妄想";
+      }
+      else if (ccb17 == true) {
+        targetb.innerHTML = "奇天烈";
+      }
+      else if (ccb18 == true) {
+        targetb.innerHTML = "不揃い";
+      }
+      else if (ccb19 == true) {
+        targetb.innerHTML = "お笑い";
+      }
+      else if (ccb20 == true) {
+        targetb.innerHTML = "暴走";
+      }
+      else if (ccb21 == true) {
+        targetb.innerHTML = "";
+      }
+      else if (ccb22 == true) {
+        targetb.innerHTML = freeb.value;
+      }
+      else if (ccb23 == true) {
+        targetb.innerHTML = "バカ";
+      }
+
+      ccc1 = document.formc.デフォc1.checked;
+      ccc2 = document.formc.デフォc2.checked;
+      ccc3 = document.formc.c1.checked;
+      ccc4 = document.formc.c2.checked;
+      ccc5 = document.formc.c3.checked;
+      ccc6 = document.formc.c4.checked;
+      ccc7 = document.formc.c5.checked;
+      ccc8 = document.formc.c6.checked;
+      ccc9 = document.formc.c7.checked;
+      ccc10 = document.formc.c8.checked;
+      ccc11 = document.formc.c9.checked;
+      ccc12 = document.formc.c10.checked;
+      ccc13 = document.formc.c11.checked;
+      ccc14 = document.formc.c12.checked;
+      ccc15 = document.formc.c13.checked;
+      ccc16 = document.formc.c14.checked;
+      ccc17 = document.formc.c15.checked;
+      const freec = document.getElementById("freec")
+      const valuec = freec.value
+
+      targetc = document.getElementById("outputc");
+
+      if (ccc1 == true) {
+        targetc.innerHTML = "劇場";
+      }
+      else if (ccc2 == true) {
+        targetc.innerHTML = "シュールメイカー";
+      }
+      else if (ccc3 == true) {
+        targetc.innerHTML = "トライアングル";
+      }
+      else if (ccc4 == true) {
+        targetc.innerHTML = "三銃士";
+      }
+      else if (ccc5 == true) {
+        targetc.innerHTML = "アクター";
+      }
+      else if (ccc6 == true) {
+        targetc.innerHTML = "ギャガ―";
+      }
+      else if (ccc7 == true) {
+        targetc.innerHTML = "ハイテンション";
+      }
+      else if (ccc8 == true) {
+        targetc.innerHTML = "スクリーム";
+      }
+      else if (ccc9 == true) {
+        targetc.innerHTML = "クレイジー";
+      }
+      else if (ccc10 == true) {
+        targetc.innerHTML = "バカ一代";
+      }
+      else if (ccc11 == true) {
+        targetc.innerHTML = "超新星";
+      }
+      else if (ccc12 == true) {
+        targetc.innerHTML = "ルーキー";
+      }
+      else if (ccc13 == true) {
+        targetc.innerHTML = "閃光";
+      }
+      else if (ccc14 == true) {
+        targetc.innerHTML = "パリジャン";
+      }
+      else if (ccc15 == true) {
+        targetc.innerHTML = "ジェンヌ";
+      }
+      else if (ccc16 == true) {
+        targetc.innerHTML = freec.value;
+      }
+      else if (ccc17 == true) {
+        targetc.innerHTML = "バカ";
+      }
+    }
+  </script>
+
+  <p style="text-align:center">
+  <span id="msg">（名前）のキャッチコピーは</span>
+  <span id="outputa" class="Kansei">（Aパート）</span>
+  <span id="outputb" class="Kansei">（Bパート）</span>
+  <span id="outputc" class="Kansei">（Cパート）</span>
+  <span>です。</span>
+  </p>
+
+</body>
+
+</html>
