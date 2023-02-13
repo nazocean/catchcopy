@@ -84,6 +84,7 @@
     <input type="checkbox" class="checks" id="筋肉"> 筋肉　
     <input type="checkbox" class="checks" id="気合いで張り切る"> 気合いで張り切る　
     <input type="checkbox" class="checks" id="異常性がある"> 異常性がある　
+    <input type="checkbox" class="checks" id="超現実的"> 超現実的　
     <input type="checkbox" class="checks" id="ビートを使う"> ビートを使う　
     <input type="checkbox" class="checks" id="変態的"> 変態的　
     <input type="checkbox" class="checks" id="太った人が動き回る"> 太った人が動き回る　
@@ -108,6 +109,7 @@
         var kin = document.getElementById("筋肉");
         var kiai = document.getElementById("気合いで張り切る");
         var ijou = document.getElementById("異常性がある");
+        var syuru = document.getElementById("超現実的");
         var beat = document.getElementById("ビートを使う");
         var hentai = document.getElementById("変態的");
         var debu = document.getElementById("太った人が動き回る");
@@ -142,6 +144,7 @@
         var cckiai = document.getElementById("cc気合いで張り切る");
         var ccijou1 = document.getElementById("cc異常性がある1");
         var ccijou2 = document.getElementById("cc異常性がある2");
+        var ccsyuru = document.getElementById("cc超現実的");
         var ccbeat1 = document.getElementById("ccビートを使う1");
         var cchentai1 = document.getElementById("cc変態的1");
         var cchentai2 = document.getElementById("cc変態的2");
@@ -273,6 +276,12 @@
         else {
           ccijou1.style.display = "none";
           ccijou2.style.display = "none";
+        }
+        if (syuru.checked == true) {
+          ccsyuru.style.display = "block";
+        }
+        else {
+          ccsyuru.style.display = "none";
         }
         if (beat.checked == true) {
           ccbeat1.style.display = "block";
@@ -520,8 +529,8 @@
     <p id="cc輝きを連想させる2" style="display:none"><input type="radio" id="c11" onchange="onRadioButtonChange();" name="c"><label> 閃光</label></p>
     <p id="ccフランスに関係する1" style="display:none"><input type="radio" id="c12" onchange="onRadioButtonChange();" name="c"><label> パリジャン</label></p>
     <p id="ccフランスに関係する2" style="display:none"><input type="radio" id="c13" onchange="onRadioButtonChange();" name="c"><label> ジェンヌ</label></p>
+    <p id="cc超現実的" style="display:none"><input type="radio" id="c16" onchange="onRadioButtonChange();" name="c"><label> シュールメイカー</label></p>
     <p><input type="radio" id="デフォc1" onchange="onRadioButtonChange();" name="c"><label> 劇場</label></p>
-    <p><input type="radio" id="デフォc2" onchange="onRadioButtonChange();" name="c"><label> シュールメイカー</label></p>
     <p><input type="radio" name="c" id="c14" onchange="onRadioButtonChange();"><label><input type="text" id="freec" required size="10">（自由記述欄）</label></p>
     <br>
     <br>
@@ -766,6 +775,7 @@
       ccc15 = document.formc.c13.checked;
       ccc16 = document.formc.c14.checked;
       ccc17 = document.formc.c15.checked;
+      ccc18 = document.formc.c16.checked;
       const freec = document.getElementById("freec")
       const valuec = freec.value
 
@@ -822,16 +832,19 @@
       else if (ccc17 == true) {
         targetc.innerHTML = "バカ";
       }
+      else if (ccc18 == true) {
+        targetc.innerHTML = "シュールメイカー";
+      }
     }
   </script>
 
+  <p id="msg" style="text-align:center">（名前）のキャッチコピーは</p>
   <p style="text-align:center">
-  <span id="msg">（名前）のキャッチコピーは</span>
   <span id="outputa" class="Kansei">（Aパート）</span>
   <span id="outputb" class="Kansei">（Bパート）</span>
   <span id="outputc" class="Kansei">（Cパート）</span>
-  <span>です。</span>
   </p>
+  <p style="text-align:center">です。</p>
 
 </body>
 
