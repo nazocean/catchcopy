@@ -87,6 +87,7 @@
     <input type="checkbox" class="checks" id="超現実的"> 超現実的　
     <input type="checkbox" class="checks" id="ビートを使う"> ビートを使う　
     <input type="checkbox" class="checks" id="変態的"> 変態的　
+    <input type="checkbox" class="checks" id="変な人"> 変な人　
     <input type="checkbox" class="checks" id="太った人が動き回る"> 太った人が動き回る　
     <input type="checkbox" class="checks" id="不思議でキモい"> 不思議でキモい　
     <input type="checkbox" class="checks" id="誰かになりきる"> 誰かが乗り移ったように演じる
@@ -112,6 +113,7 @@
         var syuru = document.getElementById("超現実的");
         var beat = document.getElementById("ビートを使う");
         var hentai = document.getElementById("変態的");
+        var kaijin = document.getElementById("変な人");
         var debu = document.getElementById("太った人が動き回る");
         var kimo = document.getElementById("不思議でキモい");
         var hyoi = document.getElementById("誰かになりきる");
@@ -148,6 +150,7 @@
         var ccbeat1 = document.getElementById("ccビートを使う1");
         var cchentai1 = document.getElementById("cc変態的1");
         var cchentai2 = document.getElementById("cc変態的2");
+        var cckaijin = document.getElementById("cc変な人");
         var ccdebu = document.getElementById("cc太った人が動き回る");
         var cckimo = document.getElementById("cc不思議でキモい");
         var cchyoi = document.getElementById("cc誰かになりきる");
@@ -314,6 +317,12 @@
         }
         else {
           cchyoi.style.display = "none";
+        }
+        if (kaijin.checked == true) {
+          cckaijin.style.display = "block";
+        }
+        else {
+          cckaijin.style.display = "none";
         }
       }
     </script>
@@ -522,6 +531,7 @@
     <p id="ccテンションが高い" style="display:none"><input type="radio" id="c5" onchange="onRadioButtonChange();" name="c"><label> ハイテンション</label></p>
     <p id="cc叫ぶ2" style="display:none"><input type="radio" id="c6" onchange="onRadioButtonChange();" name="c"><label> スクリーム</label></p>
     <p id="cc異常性がある2" style="display:none"><input type="radio" id="c7" onchange="onRadioButtonChange();" name="c"><label> クレイジー</label></p>
+    <p id="cc怪人" style="display:none"><input type="radio" id="c17" onchange="onRadioButtonChange();" name="c"><label> 怪人</label></p>
     <p id="cc年長者のおバカ" style="display:none"><input type="radio" id="c8" onchange="onRadioButtonChange();" name="c"><label> バカ一代</label></p>
     <p id="ccバカ-1クライマックス出場者2" style="display:none"><input type="radio" id="c15" onchange="onRadioButtonChange();" name="c"><label> バカ</label></p>
     <p id="cc結成3年以内2" style="display:none"><input type="radio" id="c9" onchange="onRadioButtonChange();" name="c"><label> 超新星</label></p>
@@ -775,6 +785,7 @@
       ccc16 = document.formc.c14.checked;
       ccc17 = document.formc.c15.checked;
       ccc18 = document.formc.c16.checked;
+      ccc19 = document.formc.c17.checked;
       const freec = document.getElementById("freec")
       const valuec = freec.value
 
@@ -830,6 +841,9 @@
       }
       else if (ccc18 == true) {
         targetc.innerHTML = "シュールメイカー";
+      }
+      else if (ccc19 == true) {
+        targetc.innerHTML = "怪人";
       }
     }
   </script>
